@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+   <style>
+      * {
+         box-sizing: border-box;
+      }
+
+      :root {
+         /* CSS CUSTOM VARIABLES */
+         --main-bg-color: #2196f3;
+         --main-text-color: black;
+         --main-padding: 15px;
+         --main-max-width: 1200px;
+         --main-nav-max-width: 1230px;
+
+
+         --main-font: 'Quicksand', sans-serif;
+         --main-font-size: 22px;
+         --mobile-font-size: 20px;
+
+         --background-color-00: white;
+         --background-color-01: #ccc;
+         --background-color-02: #add8e6;
+
+         --background-color-03: #e9e6cc;
+         --background-color-04: #c6cad4;
+         --background-color-05: #f7d198;
+      }
+
+      body {
+         font-family: 'Quicksand', sans-serif;
+         color: black;
+         font-size: 18px;
+      }
+
+      main {
+         max-width: 1200px;
+         margin: 0 auto;
+      }
+
+      .postGrid {
+         display: grid;
+         grid-template-columns: 10% 90%;
+         grid-gap: 30px;
+         border: 3px solid #2196f3;
+         border-radius: 10px;
+         background: #ccc;
+         padding: 10px;
+      }
+   </style>
+   <title>Document</title>
+</head>
+
+<body>
+   <main>
+      <!-- <button class="w3-button w3-blue" id="btnChange">CHANGE POST TO ID:45</button> -->
+      <show-post postid="38"/> self closing now allowed in most browsers
+
+
+      <script>
+         // <show-post/> PAGE CONTROLLER
+         // const btn = document.getElementById('btnChange');
+         // btn.addEventListener('click', function () {
+         //    // <show-post /> is an HTML tag
+         //    document.querySelector('show-post').setAttribute('postid', 45)
+         //    document.querySelector('show-post').publicMethod('We can access the component via its methods');
+         // })
+      </script>
+
+      <!--
+      <a href="../02-ndc-show-post-dynamic/dynamic.html" target="_blank">DYNAMIC LOAD</a>
+  
+      <show-all-posts-url url= "../_data/cat25.json"></show-all-posts-url> -->
+      <!--  BLOG
+      <div class="postGrid">
+         <all-posts></all-posts>
+         <the-post></the-post>
+       </div> 
+      -->
+      <!-- <show-hide></show-hide> -->
+      <!-- <wp-login></wp-login> -->
+      <wp-indexeddb-load-local cat="1"></wp-indexeddb-load-local>
+      <wp-indexeddb-load-local cat="2"></wp-indexeddb-load-local>
+      <!-- <wp-indexeddb-read-local cat="1"></wp-indexeddb-read-local>
+      <wp-indexeddb-read-local cat="2"></wp-indexeddb-read-local> -->
+
+    
+      <!-- <a href="../11-ndc-lazyload/lazy-load-component.html" target="_new">LAZY LOAD</a> -->
+      <!-- <a href="../13-ndc-modal-form/index.html" target="_new">MODAL FORM</a> -->
+
+
+      <script src="../08-ndc-authenticate/login.js" type="module"></script>
+      <script src="../04-ndc-toggle-titles/showHide.js"></script>
+      <script type="module" src="../06-ndc-blog/index.js"></script>
+      <script src="../03-ndc-show-all-posts/showAllPostsUrl.js"></script>
+
+     
+
+   </main>
+   <script type='module'>
+      import '../01-ndc-show-post/showPost.js';
+  </script>
+   <script src="../10-ndc-indexeddb/wp-indexeddb-read-local.js" type="module"></script>
+   <script src="../10-ndc-indexeddb/wp-indexeddb-load-local.js" type="module"></script>
+</body>
+
+</html>

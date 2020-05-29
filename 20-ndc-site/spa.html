@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+   <style>
+      body {
+         font-family: "Quicksand", sans-serif;
+         font-size: 20px;
+      }
+
+      main {
+         max-width: 800px;
+         margin: 0 auto;
+         padding: 20px;
+      }
+
+      nav {
+         max-width: 1400px;
+         margin: 0 auto;
+         padding: 10px;
+      }
+
+      div {
+         margin: 20px 0;
+      }
+
+      .nav {
+         display: flex;
+         justify-content: center;
+         flex-wrap: wrap;
+      }
+
+      #remove {
+         display: flex;
+         justify-content: center;
+
+      }
+
+      button {
+         background-color: #2196f3;
+         /* Green */
+         border: none;
+         border-radius: 5px;
+         width: 150px;
+         color: white;
+         padding: 15px 32px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 16px;
+         margin: 4px 2px;
+         cursor: pointer;
+         -webkit-transition-duration: 0.4s;
+         /* Safari */
+         transition-duration: 0.4s;
+      }
+
+      button:hover {
+         box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      #btnRemove {
+         background: red;
+         width: 300px;
+      }
+   </style>
+   <title>Document</title>
+   <script src="../03-ndc-show-all-posts/showAllPostsCategory.js" type="module"></script>
+   <script src="../03-ndc-show-all-posts/showAllPostsUrl.js"></script>
+   <script src="../08-ndc-authenticate/login.js" type="module"></script>
+
+</head>
+
+<body>
+   <nav>
+      <div class="nav">
+         <button id="btnPOST">POST</button>
+         <button id="btnBlog">BLOG</button>
+         <button id="btnShowCat">ADD CAT</button>
+         <button id="btnLogin">LOGIN</button>
+         <button id="btnToggle">TOGGLE</button>
+         <button id="btnShowUrl">SHOW URL</button>
+         <button id="btnCreate">CREATE</button>
+         <button id="btnIDB">IDB</button>
+         <button id="btnLazy">LAZY</button>
+         <button id="btnModal">MODAL</button>
+         <button id="btnMulti">MULTI</button>
+      </div>
+      <div id="remove">
+         <button id="btnRemove">REMOVE COMPONENT</button>
+      </div>
+
+   </nav>
+   <main>
+      <div id="component"></div>
+      <show-all-posts-url url></show-all-posts-url>
+      <script type='module'>
+         import '../12-ndc-component-in-component/index.js';
+     </script>
+     <div id="multi" style="display:none">
+         <app-shell></app-shell>
+     </div>
+   </main>
+   <footer>
+
+   </footer>
+
+   <script src="../15-ndc-navbar/back-to-top.js"></script>
+   <back-to-top></back-to-top>
+   <script>
+      const showAll = document.createElement('show-all-posts-category');
+      
+      const login = document.createElement('wp-login');
+      const blog = document.createElement('all-posts');
+
+      const component = document.getElementById('component');
+      const btnRemove = document.getElementById("btnRemove");
+
+      // remove component and parent div
+      btnRemove.addEventListener("click", function (event) {
+         alert('REMOVE CAT');
+         component.innerHTML = "";
+      });
+      const btnShowCat = document.getElementById('btnShowCat');
+      btnShowCat.addEventListener('click', function (event) {
+         alert('SHOW CAT');
+         // create and append Web Component
+         component.appendChild(showAll);
+      });
+      const btnLogin = document.getElementById('btnLogin');
+      btnLogin.addEventListener('click', function (event) {
+         alert('Login');
+         // create and append Web Component
+         component.appendChild(login);
+      });
+      const btnBlog = document.getElementById('btnBlog');
+      btnBlog.addEventListener('click', function (event) {
+         alert('Blog');
+         let a = document.createElement('a');
+         a.target = '_blank';
+         a.href = '../06-ndc-blog';
+         a.click();
+
+      });
+      const btnShowUrl = document.getElementById('btnShowUrl')
+
+      btnShowUrl.addEventListener('click', function (event) {
+         alert('Show URL');
+         const dataSource = '../_data/cat26.json';
+         // const showUrlComponent = document.createElement('show-all-posts-url');
+         // console.log(showUrlComponent);
+         // component.appendChild(showUrlComponent);
+         const showAll = document.querySelector('show-all-posts-url');
+         showAll.setAttribute('url', dataSource);
+
+      });
+      const btnMulti = document.getElementById('btnMulti')
+
+      btnMulti.addEventListener('click', function (event) {
+         alert('Show Multi');
+
+         const multi = document.getElementById('multi')
+         multi.style.display = "block";
+
+      });
+   </script>
+
+</body>
+
+</html>
