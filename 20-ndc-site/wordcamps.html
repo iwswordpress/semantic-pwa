@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,18 +17,23 @@
       }
    </style>
 </head>
-
 <body>
+   <nav>
+      <script src="../15-ndc-navbar/nav.js"></script>
+      <my-navbar></my-navbar>
+   </nav>
    <div class="content">
       <h1>ONE STOP WORDCAMPS</h1>
-      <!-- WEB COMPONENT -->
-
-      <show-wordcamps url="https://api.wordpress.org/events/1.0/?location=USA"></show-wordcamps>
 
       <!-- WEB COMPONENT -->
-      
-      
+      <show-wordcamps  country="USA"></show-wordcamps>
+      <!-- <show-wordcamps  country="AUS"></show-wordcamps> -->
+      <!-- <show-wordcamps country="ES"></show-wordcamps> -->
+      <!-- WEB COMPONENT -->
+
+
    </div>
+   <script src="../15-ndc-navbar/back-to-top.js"></script>
+   <back-to-top></back-to-top>
 </body>
-
 </html>

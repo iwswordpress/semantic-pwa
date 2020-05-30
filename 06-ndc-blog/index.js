@@ -3,7 +3,7 @@ import './post-detail.js';
 const postListComponent = document.querySelector('all-posts');
 const postDetailComponent = document.querySelector('the-post');
 //let url = '../_data/cat25.json';
-let url = 'https://central.wordcamp.org/wp-json/wp/v2/posts';
+let url = 'https://49plus.co.uk/udemy/wp-json/wp/v2/posts';
 
 console.log("[URL] " + url);
 // selectedPost is the name of a Custom Event defined in post-list.js

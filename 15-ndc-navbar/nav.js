@@ -88,7 +88,9 @@ customElements.define(
             <a href="blog.html">BLOG</a>
             <a href="login.html">LOGIN</a>
             <a href="lazy.html">LAZY</a>
-            <a href="read.html">PWA</a>
+            <a href="read.html">OFFLINE</a>
+            <a href="wordcamps.html">WORDCAMPS</a>
+
             <a href="javascript:void(0);" id="btn" style="font-size:24px;" class="icon" >&#9776;</a>
         </div>
         <br>

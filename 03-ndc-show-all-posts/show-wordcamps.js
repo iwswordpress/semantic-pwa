@@ -23,6 +23,7 @@ class ShowWordCamps extends HTMLElement {
                  font-size:24px;
                  border-radius:5px;
                  margin: 0 20px;
+                 cursor:pointer;
               }
              .app {
                border: 2px solid #2196f3;
@@ -59,7 +60,7 @@ class ShowWordCamps extends HTMLElement {
       })
    }
    static get observedAttributes() {
-      return ["url"];
+      return ['country'];
    }
    attributeChangedCallback(name, oldValue, newValue) {
       // this will fire initially as the element has no atrribute but is added when page runs
@@ -71,13 +72,19 @@ class ShowWordCamps extends HTMLElement {
          console.log("attribute=" + name, "oldValue=" + oldValue, "newValue=" + newValue);
          return;
       }
-      if (name === "url") { //  && oldValue !== null will not set initial value from LIGHT DOM
+      // if (name === "url") { //  && oldValue !== null will not set initial value from LIGHT DOM
+      //    console.log("url attribute has changed")
+      //    console.log("attribute=" + name, "oldValue=" + oldValue, "newValue=" + newValue);
+      //    this.Url = newValue;
+      //    this._getPosts(this.Url);
+      // }
+      if (name === "country") { //  && oldValue !== null will not set initial value from LIGHT DOM
          console.log("url attribute has changed")
          console.log("attribute=" + name, "oldValue=" + oldValue, "newValue=" + newValue);
-         this.Url = newValue;
+
+         this.Url = ' https://api.wordpress.org/events/1.0/?location=' + newValue;
          this._getPosts(this.Url);
       }
-
    }
    disconnectedCallback() {}
    show(target) {
@@ -88,23 +95,27 @@ class ShowWordCamps extends HTMLElement {
       const appDIV = `action${id -1}`;
       const app = this.shadowRoot.getElementById(appDIV);
       app.style.display = 'block';
+      app.style.fontWeight = 'bold';
+      app.style.fontSize = '32px';
+      app.style.color = '#2196f3';
+
       let appMessage = null;
       switch (action) {
          case 'btnR':
             action = "REGISTER";
-            appMessage = `You can book herefor event <b>${id}</b>`;
+            appMessage = `You can book here for event <b>${id}</b>`;
             break;
          case 'btnF':
             action = "BOOK FLIGHT"
-            appMessage = `List of flights`;
+            appMessage = `List of flights...`;
             break;
          case 'btnH':
             action = "BOOK HOTEL"
-            appMessage = `Recommended hotels`;
+            appMessage = `Recommended hotels...`;
             break;
          case 'btnG':
             action = "GET GUIDE"
-            appMessage = `When in Kent, Ohi0...`;
+            appMessage = `When in Kent, Ohio...`;
             break;
          default:
             // code block
