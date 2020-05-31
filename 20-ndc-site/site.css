@@ -44,6 +44,11 @@ p {
    margin-bottom: 10px;
 }
 
+.code {
+   font-weight: bold;
+   font-size: 1.7rem;
+}
+
 button {
    background: #2196f3;
    padding: 10px;

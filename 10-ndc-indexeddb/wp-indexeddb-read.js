@@ -43,6 +43,7 @@ class WPIndexedDBRead extends HTMLElement {
     }
     // if we use && oldValue !== null then we would need to call readData() in connectedCallback
     if (name === 'cat') {
+      this.cat = newValue;
       console.log(name, oldValue, newValue);
       const DB_NAME = 'cat' + newValue;
       var TABLE = 'wpcat' + newValue;
@@ -68,7 +69,7 @@ class WPIndexedDBRead extends HTMLElement {
         const request = dbTable.getAll();
         request.onsuccess = function (event) {
           post = event.target.result;
-          let card = `<div>`;
+          let card = `<div><h2>${TABLE}</h2>`;
           console.log(post)
           for (var i = 0; i < post.length; i++) {
             console.log(post[i].id + " " + post[i].title + " " + post[i].authorName);

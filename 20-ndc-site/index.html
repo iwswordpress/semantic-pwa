@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <link href="site.css" rel="stylesheet">
     <title>Document</title>
+ 
     <script>
         const SERVICE_WORKER = './sw.js';
         // Register the service worker on every page.
@@ -40,13 +41,16 @@
                 <br>
                 <p>Each of these pages uses custom HTML tags to render content and functionality from a WP site hosted
                     on another domain. Use VIEW SOURCE to see how highly functionaly components can be used with just
-                    two lines of code.</p>
+                    two lines of code.
+                </p>
+                <p class="code">&lt;show-post id="106"&gt;&lt;/show-post&gt;</p>
+                <p class="code">&lt;script src="showPost.js"&gt;&lt;/script&gt;</p>
                 <p>The navigation bar and back-to-top feature (on other pages) are also Web Components.</p>
                 <h1>01-ndc-show-post</h1>
                 <h2>This returns one post based on a JSON file for one post.</h2>
                 <br>
                 <p>We are using CSS custom properties defined in ../_css/library.css</p>
-                <p>In DEV > ELEMENTS we can change postid to 110 or 106 to get a new post.</p>
+                <p>In DEV > ELEMENTS we can change postid to 106 or 109 to get a new post.</p>
 
             </div>
             <div class="spacer"></div>
