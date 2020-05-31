@@ -22,7 +22,8 @@
          25, this page reads post from the browsers own IndexedDB database for near instant perfomance.</p>
       <p><b>An offline Single Page Application.
             If we go offline all the categories can be rendered.</b></p>
-      <p>A service worker file has been added so we can use the Browser's Cache API to store a copy of the page. A page refresh will work offline.</p>
+      <p>A service worker file has been added so we can use the Browser's Cache API to store a copy of the page. A page
+         refresh will work offline.</p>
       <br>
       <button id="btn25" newcat="25">LOAD CAT 25</button>&nbsp;
       <button id="btn6" newcat="6">LOAD CAT 6</button>&nbsp;
@@ -51,11 +52,21 @@
             document.querySelector('wp-indexeddb-read').setAttribute('cat', newCat)
          })
       </script>
-      <wp-indexeddb-read cat="24"></wp-indexeddb-read>
+     
    </main>
+
+   <footer>
+      <!-- WEB COMPONENT -->
+
+      <wp-indexeddb-read cat="24"></wp-indexeddb-read>
+
+      <!-- WEB COMPONENT -->
+   </footer>
+   
    <script src="../10-ndc-indexeddb/wp-indexeddb-read.js" type="module"></script>
    <script src="../15-ndc-navbar/back-to-top.js"></script>
+   
    <back-to-top></back-to-top>
-</body>
 
+</body>
 </html>
