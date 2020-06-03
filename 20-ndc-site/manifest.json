@@ -1,6 +1,6 @@
 {
-  "name": "DEMO PWA",
-  "short_name": "wpPWA",
+  "name": "SEMANTIC WEB COMPONENTS PWA",
+  "short_name": "SEMANTIC",
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
   "display": "standalone",

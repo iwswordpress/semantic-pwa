@@ -59,6 +59,12 @@ button {
    cursor: pointer;
 }
 
+button.orange {
+   background: #ffa500;
+   font-weight: bold;
+   margin-bottom: 30px;
+}
+
 button:hover,
 button:focus,
 button:active {
