@@ -1,37 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <link href="site.css" rel="stylesheet">
+    <link rel="manifest" href="./manifest.json">
     <title>Document</title>
- 
     <script>
         const SERVICE_WORKER = './sw.js';
         // Register the service worker on every page.
         // Promised based.
         if ('serviceWorker' in navigator) {
-           console.log("Registering...");
-           navigator.serviceWorker.register(SERVICE_WORKER).then(function (registration) {
-              console.log("Registration of " + SERVICE_WORKER + " was successful.");
-           }).catch(function (error) {
-              //test by using xsw.js
-              console.log("ERROR registering service worker: ", error)
-           });
+            console.log("Registering...");
+            navigator.serviceWorker.register(SERVICE_WORKER).then(function (registration) {
+                console.log("Registration of " + SERVICE_WORKER + " was successful.");
+            }).catch(function (error) {
+                //test by using xsw.js
+                console.log("ERROR registering service worker: ", error)
+            });
         }
-     </script>
+    </script>
 </head>
-
 <body>
     <nav>
         <script src="../15-ndc-navbar/nav.js"></script>
         <my-navbar></my-navbar>
     </nav>
-
-
-
     <main>
         <div class="wrapper">
             <div class="explanation">
@@ -51,7 +46,6 @@
                 <br>
                 <p>We are using CSS custom properties defined in ../_css/library.css</p>
                 <p>In DEV > ELEMENTS we can change postid to 106 or 109 to get a new post.</p>
-
             </div>
             <div class="spacer"></div>
             <div id="output">
@@ -70,13 +64,10 @@
                             'We can access the component via its methods');
                     })
                 </script>
-
                 </section>
             </div>
-
         </div>
     </main>
-
     <script type='module'>
         import '../01-ndc-show-post/showPost.js';
   </script>
@@ -85,7 +76,5 @@
     <wp-indexeddb-load cat="24"></wp-indexeddb-load>
     <wp-indexeddb-load cat="25"></wp-indexeddb-load>
     <script src="../10-ndc-indexeddb/wp-indexeddb-load.js" type="module"></script>
-
 </body>
-
 </html>

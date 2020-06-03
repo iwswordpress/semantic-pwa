@@ -18,6 +18,10 @@ var localAssets = [
   './nav.js',
   './site.css',
   './read.html',
+  './index.html',
+  './cat.html',
+  './blog.html',
+  './login.html',
   './back-to-top.js',
   './wp-indexeddb-read.js'
 ];
