@@ -1,4 +1,4 @@
-var version = "-SEMANTIC";
+var version = "1-SEMANTIC-PWA";
 
 // Set fallback page. We can have several and select acordingly in fetch>catch code at bottom of file.
 var FALLBACK_PAGE = "fallback.html";
