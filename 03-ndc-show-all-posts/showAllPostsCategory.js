@@ -32,13 +32,27 @@ class ShowAllPostsCategory extends HTMLElement {
     console.log("connectedCallback...");
     this._getPosts();
   }
-
+  static get observedAttributes() {
+    return ["cat"];
+  }
+  attributeChangedCallback(name, oldValue, newValue) {
+    // this will fire initially as the element has no atrribute but is added when page runs
+    console.log("attribute has changed")
+    if (oldValue === newValue) {
+      return;
+    }
+    if (name === "cat") {
+      console.log(name, oldValue, newValue);
+      this.ID = newValue;
+      this._getPosts(this.ID)
+    }
+  }
   disconnectedCallback() {
     console.log("disconnectedCallback...");
   }
 
   _getPosts() {
-    let apiUrl = 'https://49plus.co.uk/udemy/wp-json/wp/v2/posts?categories=4';
+    let apiUrl = 'https://wpjs.co.uk/wpb/wp-json/wp/v2/posts?categories=' + this.id;
     console.log(apiUrl);
 
     fetch(apiUrl)
